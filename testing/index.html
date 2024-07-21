@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Futuristic Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+        
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .hero {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .hero-content {
+            text-align: center;
+        }
+        
+        .section {
+            padding: 50px 0;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #00ffaa;
+            color: #000;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+        
+        .contact-link:hover {
+            background-color: #00755e;
+        }
+        
+        .footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+/* Продовження CSS стилів */
+.gallery-item {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-item img {
+    border-radius: 10px;
+}
+
+.gallery-item-title {
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+/* Продовження CSS стилів */
+.container {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    line-height: 1.6;
+}
+
+.section-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.section-content ul li {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (min-width: 576px) {
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 992px) {
+    .section-title {
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-title {
+        font-size: 40px;
+    }
+}
+/* Додаткові CSS стилі */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+/* Ще більше CSS стилів */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+}
+
+.card-link {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+/* Ще більше CSS стилів */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+/* Ще більше CSS стилів */
+.tooltip-top .tooltiptext {
+    bottom: 125%;
+    top: auto;
+}
+
+.tooltip-left .tooltiptext {
+    top: 50%;
+    right: 125%;
+    bottom: auto;
+    left: auto;
+    transform: translateY(-50%);
+}
+
+.tooltip-right .tooltiptext {
+    top: 50%;
+    left: 125%;
+    bottom: auto;
+    right: auto;
+    transform: translateY(-50%);
+}
+
+.tooltip-bottom .tooltiptext {
+    top: 125%;
+    bottom: auto;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Ефект рамки */
+.border-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.border-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #fff;
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.border-effect:hover::before {
+    transform: translate(-5px, -5px);
+}
+
+/* Анімація блока */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in {
+    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+}
+
+/* Анімація тексту */
+@keyframes textFocus {
+    0% {
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.text-focus-in {
+    animation: textFocus 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+/* Анімація появи */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-in-out both;
+}
+/* Ще більше CSS стилів */
+/* Анімація затемнення */
+.overlay-effect {
+    position: relative;
+}
+
+.overlay-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-effect:hover::before {
+    opacity: 1;
+}
+
+/* Ефект розширення */
+.expand-effect {
+    overflow: hidden;
+    position: relative;
+}
+
+.expand-effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+    transition: width 0.3s ease;
+}
+
+.expand-effect:hover::after {
+    width: 100%;
+}
+
+/* Анімація вибуху */
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+.explode-effect {
+    display: inline-block;
+}
+
+.explode-effect:hover::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    border-radius: 50%;
+    animation: explode 0.5s ease;
+}
+
+/* Перехід кольорів */
+.color-transition {
+    transition: background-color 0.3s ease;
+}
+
+.color-transition:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Анімація появи тексту */
+.text-appear {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.text-appear:hover {
+    opacity: 1;
+}
+
+/* Розбігання тексту */
+.text-scatter {
+    position: relative;
+}
+
+.text-scatter::after {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.text-scatter:hover::after {
+    opacity: 1;
+}
+
+/* Часткове затемнення */
+.partial-overlay {
+    position: relative;
+    display: inline-block;
+}
+
+.partial-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.partial-overlay:hover::before {
+    opacity: 1;
+}
+/* Більше CSS стилів */
+/* Анімація затемнення при наведенні */
+.darken-on-hover {
+    transition: filter 0.3s;
+}
+
+.darken-on-hover:hover {
+    filter: brightness(80%);
+}
+
+/* Підсвічування при наведенні */
+.highlight-on-hover {
+    transition: background-color 0.3s;
+}
+
+.highlight-on-hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Перехіди при наведенні */
+.transition-on-hover {
+    transition: all 0.3s;
+}
+
+.transition-on-hover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Вибіркове затемнення тексту */
+.text-darken-on-hover {
+    transition: color 0.3s;
+}
+
+.text-darken-on-hover:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Підсвічування тла */
+.bg-highlight-on-hover {
+    transition: background-color 0.3s;
+}
+
+.bg-highlight-on-hover:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Анімація зміни розміру */
+.resize-on-hover {
+    transition: width 0.3s, height 0.3s;
+}
+
+.resize-on-hover:hover {
+    width: 120px;
+    height: 120px;
+}
+
+/* Обводка при наведенні */
+.outline-on-hover {
+    transition: outline-width 0.3s;
+}
+
+.outline-on-hover:hover {
+    outline-width: 3px;
+}
+/* Більше CSS стилів */
+/* Анімація зміни прозорості */
+.opacity-transition {
+    transition: opacity 0.3s;
+}
+
+.opacity-transition:hover {
+    opacity: 0.7;
+}
+
+/* Рамка та тінь */
+.shadow-border {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Рамка з кутами */
+.rounded-border {
+    border-radius: 10px;
+}
+
+/* Картинка з обрізаними кутиками */
+.rounded-image {
+    border-radius: 50%;
+}
+
+/* Кнопка з тінню та зміною кольору при наведенні */
+.btn-effect {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-effect:hover {
+    background-color: #0056b3;
+}
+
+/* Текст з тінню */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Анімація тексту */
+@keyframes neon {
+    0% {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #0ff, 0 0 40px #0ff, 0 0 45px #0ff;
+    }
+    100% {
+        color: #fff;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 35px #0ff, 0 0 40px #0ff, 0 0 45px #0ff;
+    }
+}
+
+.neon-text {
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+/* Анімація мерехтіння */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink-effect {
+    animation: blink 1s linear infinite;
+}
+
+/* Анімація руху вгору */
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.move-up {
+    animation: moveUp 0.5s ease-in-out infinite;
+}
+
+/* Анімація мерехтіння фону */
+@keyframes backgroundBlink {
+    0% {
+        background-color: #007bff;
+    }
+    50% {
+        background-color: #0056b3;
+    }
+    100% {
+        background-color: #007bff;
+    }
+}
+
+.background-blink {
+    animation: backgroundBlink 1s ease-in-out infinite;
+}
+
+/* Анімація масштабування */
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-effect {
+    animation: scale 0.5s ease-in-out infinite;
+}
+
+/* Анімація руху вліво-вправо */
+@keyframes moveRightLeft {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.move-right-left {
+    animation: moveRightLeft 0.5s ease-in-out infinite;
+}
+
+
+
+            </style>
+        </head>
+        <header class="navbar">
+            <div class="container">
+                <a href="#" class="navbar-brand">Super Futuristic Website</a>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link">Home</a></li>
+                        <li><a href="#" class="nav-link">About</a></li>
+                        <li><a href="#" class="nav-link">Services</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="container">
+            <section>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-content">Denis, 16 years old, Shepetivka. Living in a flower, skinny, pale, tall, with dark circles under the eyes.</p>
+                <p class="section-content">My hobbies: playing games. Currently my favorite games are Mobile Legends and Albion Online.</p>
+                <p class="section-content">I love vanilla ice cream and sleeping.</p>
+                <p class="section-content">Hikikomori (social isolation) and sociophobe. If you see me in real life, block me, so let's hang out online to the fullest - it's all online, and I become dependent on you as quickly as possible. Give me ears 👉👈.</p>
+                <p class="section-content">I also like anime, although I don't read manga. Nya to all!</p>
+            </section>
+        
+            <section>
+                <h2 class="section-title">My Projects</h2>
+                <div class="card">
+                    <h3 class="card-title">Project 1</h3>
+                    <p class="card-text">Description of project 1.</p>
+                    <a href="#" class="card-link">View Project</a>
+                </div>
+                <div class="card">
+                    <h3 class="card-title">Project 2</h3>
+                    <p class="card-text">Description of project 2.</p>
+                    <a href="#" class="card-link">View Project</a>
+                </div>
+            </section>
+        
+            <section>
+                <h2 class="section-title">My Achievements</h2>
+                <ul class="section-content">
+                    <li>Won first place in gaming competition.</li>
+                    <li>Completed online course on web development.</li>
+                </ul>
+            </section>
+        
+            <section>
+                <h2 class="section-title">Contact Me</h2>
+                <ul class="section-content">
+                    <li>Email: example@example.com</li>
+                    <li>Phone: +1234567890</li>
+                </ul>
+            </section>
+        
+            <section>
+                <h2 class="section-title">Testimonials</h2>
+                <div class="testimonial">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"Super Futuristic Website is amazing! I found all the information I needed in one place."</p>
+                        <footer class="blockquote-footer">John Doe</footer>
+                    </blockquote>
+                </div>
+                <div class="testimonial">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"I highly recommend Super Futuristic Website to everyone. It's user-friendly and visually appealing."</p>
+                        <footer class="blockquote-footer">Jane Smith</footer>
+                    </blockquote>
+                </div>
+            </section>
+        
+            <section>
+                <h2 class="section-title">Gallery</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="image1.jpg" class="img-fluid" alt="Image 1">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="image2.jpg" class="img-fluid" alt="Image 2">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="image3.jpg" class="img-fluid" alt="Image 3">
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 Super Futuristic Website. All rights reserved.</p>
+            </div>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+        </body>
+        </html>
+        

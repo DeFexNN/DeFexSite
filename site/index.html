@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Мій веб-сайт</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Beer+Money&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-family: 'Beer Money', cursive;
+    }
+    
+    .anime-library {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
+    
+    .anime-item {
+      width: 200px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .anime-item img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .anime-item h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    
+    .anime-item p {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="welcome" class="container">
+    <h1>Welcome to the club buddy</h1>
+  </div>
+
+  <div id="content" class="container" style="display: none;">
+    <nav>
+      <ul>
+        <li><a href="#" class="menu-item active" onclick="changeTab(event, 'anime')">Аніме</a></li>
+        <li><a href="#" class="menu-item" onclick="changeTab(event, 'games')">Ігри</a></li>
+        <li><a href="#" class="menu-item" onclick="changeTab(event, 'music')">Музика</a></li>
+      </ul>
+    </nav>
+
+    <div id="anime" class="tab-content">
+      <h1>Аніме</h1>
+      <div class="anime-library">
+        <div class="anime-item">
+          <img src="onepiece.jpg" alt="Аніме 1">
+          <h3>One Piece</h3>
+          <p>Сезони: 24</p> <!-- Додано інформацію про сезони -->
+          <p>Переглянуто серій: 1063</p>
+          <p>Оцінка: 9.5/10</p>
+        </div>      
+        <div class="anime-item">
+          <img src="7ds.jpg" alt="Аніме 2" width="150" height="200">
+          <h3>The Seven Deadly Sins</h3>
+          <p>Сезони: 24</p>
+          <p>Переглянуто серій: 24Серії</p>
+          <p>Оцінка: 9.0/10</p>
+        </div>
+        <div class="anime-item">
+          <img src="anime3.jpg" alt="Аніме 3" width="150" height="200">
+          <h3>Назва аніме 3</h3>
+          <p>Переглянуто серій: 15</p>
+          <p>Оцінка: 8.8</p>
+        </div>
+        <!-- Додайте більше елементів аніме-бібліотеки за необхідністю -->
+      </div>
+    </div>
+
+    <div id="games" class="tab-content">
+      <h1>Ігри</h1>
+      <!-- Додайте вміст для розділу ігор -->
+    </div>
+
+    <div id="music" class="tab-content">
+      <h1>Музика</h1>
+      <!-- Додайте вміст для розділу музики -->
+    </div>
+  </div>
+
+  <script>
+    // JavaScript код
+    window.addEventListener('DOMContentLoaded', function() {
+      var welcomeContainer = document.getElementById('welcome');
+      var contentContainer = document.getElementById('content');
+
+      setTimeout(function() {
+        welcomeContainer.style.display = 'none';
+        contentContainer.style.display = 'block';
+      }, 3000); // Затримка у 3000 мілісекунд (3 секунди)
+    });
+
+    function changeTab(evt, tabName) {
+      var i, tabContent, tabLinks;
+
+      tabContent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+      }
+
+      tabLinks = document.getElementsByClassName("menu-item");
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+      }
+
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.classList.add("active");
+    }
+  </script>
+</body>
+</html>

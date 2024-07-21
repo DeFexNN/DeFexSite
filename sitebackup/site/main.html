@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Мій веб-сайт</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Beer+Money&display=swap');
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-family: 'Beer Money', cursive;
+    }
+    
+    .active {
+      color: #ff0000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#" class="menu-item active" onclick="changeTab(event, 'anime')">Аніме</a></li>
+      <li><a href="#" class="menu-item" onclick="changeTab(event, 'games')">Ігри</a></li>
+      <li><a href="#" class="menu-item" onclick="changeTab(event, 'music')">Музика</a></li>
+    </ul>
+  </nav>
+
+  <div id="anime" class="tab-content">
+    <h1>Аніме</h1>
+    <p>Тут буде вміст про аніме.</p>
+  </div>
+
+  <div id="games" class="tab-content">
+    <h1>Ігри</h1>
+    <p>Тут буде вміст про ігри.</p>
+  </div>
+
+  <div id="music" class="tab-content">
+    <h1>Музика</h1>
+    <p>Тут буде вміст про музику.</p>
+  </div>
+
+  <script>
+    function changeTab(event, tabName) {
+      // Відміняємо стандартну дію посилання
+      event.preventDefault();
+
+      // Знаходимо всі елементи меню
+      var menuItems = document.getElementsByClassName("menu-item");
+
+      // Знімаємо клас активного елемента з усіх пунктів меню
+      for (var i = 0; i < menuItems.length; i++) {
+        menuItems[i].classList.remove("active");
+      }
+
+      // Додаємо клас активного елемента до обраного пункту меню
+      event.target.classList.add("active");
+
+      // Знаходимо всі елементи вмісту
+      var tabContents = document.getElementsByClassName("tab-content");
+
+      // Ховаємо всі елементи вмісту
+      for (var j = 0; j < tabContents.length; j++) {
+        tabContents[j].style.display = "none";
+      }
+
+      // Показуємо обраний елемент вмісту
+      document.getElementById(tabName).style.display = "block";
+    }
+  </script>
+</body>
+</html>
